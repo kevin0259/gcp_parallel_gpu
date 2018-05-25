@@ -1,0 +1,103 @@
+2018-05-25 06:42:00,752 - tensorflow - INFO - Using config: {'_save_checkpoints_steps': None, '_task_id': 0, '_save_summary_steps': 100, '_train_distribute': <tensorflow.contrib.distribute.python.mirrored_strategy.MirroredStrategy object at 0x7fb015967e10>, '_num_ps_replicas': 0, '_master': '', '_task_type': 'worker', '_num_worker_replicas': 1, '_global_id_in_cluster': 0, '_tf_random_seed': None, '_log_step_count_steps': 100, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fb015967dd8>, '_session_config': allow_soft_placement: true
+log_device_placement: true
+, '_service': None, '_model_dir': './cnn_model/cnn_model_dense(1024)_drop(0.3)_lr(0.003)_20180525064200', '_evaluation_master': '', '_save_checkpoints_secs': 30, '_is_chief': True}
+2018-05-25 06:42:00,767 - tensorflow - INFO - Running training and evaluation locally (non-distributed).
+2018-05-25 06:42:00,768 - tensorflow - INFO - Start train and evaluate loop. The evaluate will happen after 60 secs (eval_spec.throttle_secs) or training is finished.
+2018-05-25 06:42:05,947 - tensorflow - INFO - Device is available but not used by distribute strategy: /device:CPU:0
+2018-05-25 06:42:05,949 - tensorflow - INFO - Configured nccl all-reduce.
+2018-05-25 06:42:06,117 - tensorflow - INFO - Calling model_fn.
+2018-05-25 06:42:06,326 - tensorflow - INFO - Error reported to Coordinator: Use DistributionStrategy.update() to modify a MirroredVariable.
+Traceback (most recent call last):
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/training/coordinator.py", line 297, in stop_on_exception
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/eager/context.py", line 295, in _mode
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/eager/context.py", line 514, in device_policy
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5265, in get_controller
+    yield g
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5060, in get_controller
+    yield default
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5265, in get_controller
+    yield g
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 4338, in device
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5991, in __exit__
+    self._name_scope.__exit__(type_arg, value_arg, traceback_arg)
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 4115, in name_scope
+    yield "" if new_stack is None else new_stack + "/"
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py", line 2097, in __exit__
+    self._graph_context_manager.__exit__(type_arg, value_arg, traceback_arg)
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5265, in get_controller
+    yield g
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5060, in get_controller
+    yield default
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5265, in get_controller
+    yield g
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 466, in run
+    self.done = True
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py", line 2283, in variable_creator_scope
+    yield
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2939, in _variable_creator_scope
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py", line 2283, in variable_creator_scope
+    yield
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/mirrored_strategy.py", line 465, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/estimator/estimator.py", line 831, in _call_model_fn
+    model_fn_results = self._model_fn(features=features, **kwargs)
+  File "<ipython-input-5-d2ce7f363a08>", line 27, in cnnmodel_fn
+    labels=labels, predictions=tf.argmax(logits,axis=1))
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/metrics_impl.py", line 409, in accuracy
+    name or 'accuracy')
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/metrics_impl.py", line 345, in mean
+    return mean_t, update_op
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/variable_scope.py", line 2095, in __exit__
+    self._current_name_scope.__exit__(type_arg, value_arg, traceback_arg)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 5991, in __exit__
+    self._name_scope.__exit__(type_arg, value_arg, traceback_arg)
+  File "/usr/lib/python3.5/contextlib.py", line 77, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 4115, in name_scope
+    yield "" if new_stack is None else new_stack + "/"
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/metrics_impl.py", line 332, in mean
+    update_total_op = state_ops.assign_add(total, math_ops.reduce_sum(values))
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 251, in assign_add
+    return ref.assign_add(value)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/values.py", line 311, in assign_add
+    return self.get(device=_get_update_device()).assign_add(*args, **kwargs)
+  File "/home/tsaikevin/env/tf18p3/lib/python3.5/site-packages/tensorflow/contrib/distribute/python/values.py", line 283, in _get_update_device
+    "Use DistributionStrategy.update() to modify a MirroredVariable.")
+RuntimeError: Use DistributionStrategy.update() to modify a MirroredVariable.
